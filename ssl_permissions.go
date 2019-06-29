@@ -13,7 +13,7 @@ func sslKeyPermissions(sslkey string) error {
 	if err != nil {
 		return err
 	}
-	if info.Mode().Perm()&0077 != 0 {
+	if info.Mode().Perm()&0007 != 0 {
 		return ErrSSLKeyHasWorldPermissions
 	}
 	return nil
